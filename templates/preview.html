@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Preview Resume{% endblock %}
+{% block content %}
+<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+    
+    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+        <a href="{{ url_for('choose_template', resume_id=resume_id) }}" class="btn btn-outline">
+            <i class="fa-solid fa-arrow-left"></i> Change Template
+        </a>
+        <a href="{{ url_for('download', resume_id=resume_id) }}" class="btn btn-primary" target="_blank">
+            <i class="fa-solid fa-download"></i> Download PDF
+        </a>
+    </div>
+
+    <!-- The iframe load the actual resume HTML which is stylistically independent from the main UI -->
+    <div class="preview-container">
+        <iframe class="resume-preview" src="{{ url_for('preview_raw', resume_id=resume_id, template_id=template_id) }}"></iframe>
+    </div>
+
+</div>
+{% endblock %}

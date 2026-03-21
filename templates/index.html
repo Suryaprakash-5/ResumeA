@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Stunning Resumes in Minutes{% endblock %}
+
+{% block content %}
+<div class="glass-panel" style="max-width: 900px;">
+    <h1 class="hero-title">Create a <span>Premium Resume</span> in Minutes.</h1>
+    <p class="hero-subtitle">Stand out from the crowd with exclusive, professionally designed templates. No signup required.</p>
+    
+    <div class="grid grid-2" style="gap: 2rem; margin-top: 2rem;">
+        <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+            <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 3rem; color: #38bdf8; margin-bottom: 1rem;"></i>
+            <h3>Beautiful Designs</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem; margin-top: 0.5rem;">Access exclusive templates crafted by UI professionals.</p>
+        </div>
+        <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+            <i class="fa-solid fa-bolt" style="font-size: 3rem; color: #818cf8; margin-bottom: 1rem;"></i>
+            <h3>Lightning Fast</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem; margin-top: 0.5rem;">Fill your details and generate a PDF instantly.</p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 3rem; text-align: center;">
+        <a href="{{ url_for('form') }}" class="btn btn-primary btn-lg" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
+            <i class="fa-solid fa-rocket"></i> Create Resume Now
+        </a>
+    </div>
+</div>
+{% endblock %}

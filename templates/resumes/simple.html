@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ resume.name }} Resume</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; margin: 0; padding: 20px; line-height: 1.6; }
+        .header { text-align: center; border-bottom: 2px solid #ccc; padding-bottom: 20px; margin-bottom: 20px; }
+        .header h1 { margin: 0; font-size: 2.5em; color: #222; }
+        .contact { color: #555; font-size: 0.9em; margin-top: 5px; }
+        .section { margin-bottom: 20px; }
+        .section-title { font-size: 1.2em; color: #222; text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 10px; }
+        .item { margin-bottom: 15px; }
+        .item-header { font-weight: bold; font-size: 1.1em; margin-bottom: 5px; }
+        .item-meta { color: #666; font-size: 0.9em; font-style: italic; margin-bottom: 5px; }
+        .skills-list { padding-left: 20px; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ resume.name }}</h1>
+        <div class="contact">
+            {{ resume.email }} | {{ resume.phone }} <br>
+            {{ resume.address }}
+        </div>
+    </div>
+
+    {% if resume.education %}
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+        {% for edu in resume.education %}
+        <div class="item">
+            <div class="item-header">{{ edu.degree }}</div>
+            <div class="item-meta">{{ edu.school }} &bull; {{ edu.year }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if resume.experience %}
+    <div class="section">
+        <h2 class="section-title">Experience</h2>
+        {% for exp in resume.experience %}
+        <div class="item">
+            <div class="item-header">{{ exp.title }}</div>
+            <div class="item-meta">{{ exp.company }} &bull; {{ exp.year }}</div>
+            <div>{{ exp.desc }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if resume.projects %}
+    <div class="section">
+        <h2 class="section-title">Projects</h2>
+        {% for proj in resume.projects %}
+        <div class="item">
+            <div class="item-header">{{ proj.title }}</div>
+            <div>{{ proj.desc }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if resume.skills %}
+    <div class="section">
+        <h2 class="section-title">Skills</h2>
+        <ul class="skills-list">
+            {% for skill in resume.skills %}
+            <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Choose Template{% endblock %}
+{% block content %}
+<div class="glass-panel" style="max-width: 1200px;">
+    <h1 style="text-align: center; margin-bottom: 1rem;">Select a Template</h1>
+    <p style="text-align: center; color: #cbd5e1; margin-bottom: 2rem;">Pick a design that best suits your profession.</p>
+    
+    <div class="template-grid">
+        <!-- Simple Template -->
+        <div class="template-card" onclick="window.location.href='{{ url_for('preview', resume_id=resume_id, template_id='simple') }}'">
+            <div class="template-preview">
+                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Simple Template" style="opacity: 0.8;">
+                <h2 style="position:absolute; color:#1e293b; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700;">Simple Style</h2>
+            </div>
+            <div class="template-info">
+                <h3>The Minimalist</h3>
+                <p style="color: #94a3b8; font-size: 0.9rem;">Clean, straightforward layout. Best for freshers and standard corporate roles.</p>
+                <span class="btn btn-outline btn-block" style="margin-top: 1rem;">Select</span>
+            </div>
+        </div>
+
+        <!-- Professional Template -->
+        <div class="template-card" onclick="window.location.href='{{ url_for('preview', resume_id=resume_id, template_id='professional') }}'">
+            <div class="template-preview">
+                <img src="https://images.unsplash.com/photo-1626868884951-b8d9ba8848fb?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Professional Template" style="opacity: 0.8;">
+                <h2 style="position:absolute; color:#0f766e; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700;">Professional</h2>
+            </div>
+            <div class="template-info">
+                <h3>The Executive</h3>
+                <p style="color: #94a3b8; font-size: 0.9rem;">Structured dual-column approach. Ideal for experienced professionals.</p>
+                <span class="btn btn-outline btn-block" style="margin-top: 1rem;">Select</span>
+            </div>
+        </div>
+
+        <!-- Creative Template -->
+        <div class="template-card" onclick="window.location.href='{{ url_for('preview', resume_id=resume_id, template_id='creative') }}'">
+            <div class="template-preview">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Creative Template" style="opacity: 0.8;">
+                <h2 style="position:absolute; color:#e11d48; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700;">Creative Focus</h2>
+            </div>
+            <div class="template-info">
+                <h3>The Innovator</h3>
+                <p style="color: #94a3b8; font-size: 0.9rem;">Bold colors and modern typography. Perfect for designers and creatives.</p>
+                <span class="btn btn-outline btn-block" style="margin-top: 1rem;">Select</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
